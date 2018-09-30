@@ -1,0 +1,42 @@
+<div class="container">
+  <h3>What are Stats?</h3>
+  <p>Stats are essential part of your Phantasm RPG character development. There are currently 26 Stats in the game and
+    each of them affects your
+    hero differently. If you keep to agressive gameplay style, you may prefer increasing offensive Stats like Agility
+    or Sorcery. Playing more tanky-ish build
+    could lead to stacking Resistances and Evasion. You should know your strengths and weaknesses and optimize your
+    Stats combination accordingly.
+  </p>
+  <hr>
+  <h3>How do I increase my Stats?</h3>
+  <p>The main source of Stats is items you receive after level completion. You can see Stats these items provide in the
+    tooltip. Stats amount the item gives depends
+    on item level linearly, which means that item with lvl 20 will give twice as many stats as the same item with lvl
+    10. Some buffs, passive and active skills can also grant Stats.
+    You can see the list of stats and their descriptions currently present in the map in this page. Try clicking on
+    Stat name to see items that
+    increase that Stat value.
+  </p>
+  <hr>
+  <h1>List of Stats</h1>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Icon</th>
+          <th>Name</th>
+          <th>Effect</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of STAT_DESCRIPTIONS | keyvalue">
+          <td>
+            <img [src]="i.value.icon" [alt]="'Phantasm RPG ' + i.value.name + ' stat icon.'" [title]="'Phantasm RPG ' + i.value.name + ' stat icon.'">
+          </td>
+          <td>{{i.value.name}}</td>
+          <td>{{i.value.description}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

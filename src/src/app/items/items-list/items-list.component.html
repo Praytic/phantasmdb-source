@@ -1,0 +1,75 @@
+
+<div class="container">  
+  <div class="row">
+    <div class="col-md-2">
+      <h3>Filter Items</h3>
+      <hr>
+      <form>
+        <div class="form-group">
+            <label for="item-list-filter-type">Type</label>
+            <div class="form-check" id="item-list-filter-type">
+              <div *ngFor="let type of ITEM_TYPE_VALUES">
+                  <input type="checkbox" class="form-check-input" [id]="'item-list-filter-type-'+type"
+                  [(ngModel)]="filterType[type]" (ngModelChange)="updateFilter()" name="'item-list-filter-type-'+type">
+                  <label [for]="'item-list-filter-type-'+type">{{type}}</label>
+              </div>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group">
+            <label for="item-list-filter-rarity">Rarity</label>
+            <div class="form-check" id="item-list-filter-rarity">
+              <div *ngFor="let rarity of ITEM_RARITY_VALUES;">
+                  <input type="checkbox" class="form-check-input" [id]="'item-list-filter-rarity-'+rarity" 
+                  [(ngModel)]="filterRarity[rarity]" (ngModelChange)="updateFilter()" [name]="'item-list-filter-rarity-'+rarity">
+                  <label [for]="'item-list-filter-rarity-'+rarity">{{rarity}}</label>
+              </div>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group">
+            <label for="item-list-filter-stat">Stats</label>
+            <div class="form-check" id="item-list-filter-stat">
+              <div *ngFor="let stat of STAT_VALUES;">
+                  <input type="checkbox" class="form-check-input" [id]="'item-list-filter-rarity-'+stat" 
+                  [(ngModel)]="filterStats[stat]" (ngModelChange)="updateFilter()" [name]="'item-list-filter-rarity-'+stat">
+                  <label [for]="'item-list-filter-rarity-'+stat">{{stat}}</label>
+              </div>
+            </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-10">
+      <div class="table-responsive">
+          <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Icon</th>
+                  <th>Name</th>
+                  <th><span class="has-tooltip" ngbTooltip="Level where you can get this item.">Drop Level</span></th>
+                  <th>Rarity and Type</th>
+                  <th>Stats and effects</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of ITEMS">
+                  <td>
+                    <img [src]="item.icon" [alt]="'Phantasm RPG ' + item.name + ' icon.'" [title]="'Phantasm RPG ' + item.name + ' icon.'">
+                  </td>
+                  <td>{{item.name}}</td>
+                  <td>{{item.dropLevel}}</td>
+                  <td>{{item.rarity}} {{item.type}}</td>
+                  <td>
+                    <div *ngFor="let stat of item.stats">
+                      {{stat[1]}} {{stat[0]}}
+                    </div>
+                    <div *ngFor="let effect of item.effects">{{effect}}</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+      </div>
+    </div>
+  </div>
+</div>
