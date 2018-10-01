@@ -8,6 +8,7 @@ import { STAT_DESCRIPTIONS, EStat } from '../../../definitions/stat';
 })
 export class GenericInformationStatListComponent implements OnInit {
   readonly STAT_DESCRIPTIONS = STAT_DESCRIPTIONS;
+  readonly STATS_COUNT = Object.keys(STAT_DESCRIPTIONS).length;
   constructor() { }
 
   ngOnInit() {

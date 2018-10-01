@@ -33,7 +33,7 @@ export enum EStat {
     SHADOW_RESISTANCE = 'Shadow Resistance'
 }
 
-export const STAT_DESCRIPTIONS: { [key in EStat] : IStatInfo; } = {
+export const STAT_DESCRIPTIONS: { [key in EStat] : IStatInfo } = {
     [EStat.CRITICALITY]: {
         name: 'Criticality',
         description: 'Increased physical critical strike chance.',
