@@ -48,19 +48,19 @@ export const STAT_DESCRIPTIONS: { [key in EStat] : IStatInfo } = {
         icon: 'assets/icons/stats/btnwindwalkon.png'
     },
     [EStat.ADRENALINE]: {
-        id: EStat.AGILITY,
+        id: EStat.ADRENALINE,
         name: 'Adrenaline',
         description: 'Decreased cooldown for spells with cooldown less than 30s.',
         icon: 'assets/icons/stats/btnbloodlust.png'
     },
     [EStat.PREPARATION]: {
-        id: EStat.AGILITY,
+        id: EStat.PREPARATION,
         name: 'Preparation',
         description: 'Decreased cooldown for spells with cooldown greater or equal than 30s.',
         icon: 'assets/icons/stats/btnetherealformon.png'
     },
     [EStat.SORCERY]: {
-        id: EStat.AGILITY,
+        id: EStat.SORCERY,
         name: 'Sorcery',
         description: 'Increased magical critical strike chance.',
         icon: 'assets/icons/stats/btncharm.png'

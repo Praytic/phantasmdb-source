@@ -33,7 +33,7 @@
               <div *ngFor="let stat of STAT_VALUES;">
                   <input type="checkbox" class="form-check-input" [id]="'item-list-filter-rarity-'+stat.id"
                   [(ngModel)]="filterStats[stat.id]" (ngModelChange)="updateFilter()" [name]="'item-list-filter-rarity-'+stat.id">
-                  <label [for]="'item-list-filter-rarity-'+stat">{{stat.name}}</label>
+                  <label [for]="'item-list-filter-rarity-'+stat.id">{{stat.name}}</label>
               </div>
             </div>
         </div>
