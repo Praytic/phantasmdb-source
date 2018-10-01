@@ -28,7 +28,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let i of STAT_DESCRIPTIONS | keyvalue">
+        <tr *ngFor="let i of STAT_DESCRIPTIONS | keyvalue" [id]="i.key">
           <td>
             <img [src]="i.value.icon" [alt]="'Phantasm RPG ' + i.value.name + ' stat icon.'" [title]="'Phantasm RPG ' + i.value.name + ' stat icon.'">
           </td>

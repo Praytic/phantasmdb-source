@@ -370,7 +370,7 @@ export const ITEMS: IItem[] = [{
     stats: [
     ],
     effects: [
-        '+20% max. hitpoints.'
+        '+20% Max. hitpoints.'
     ],
     rarity: EItemRarity.RARE,
     type: EItemType.ARMOR,

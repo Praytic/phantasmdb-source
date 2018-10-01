@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ITEMS, EItemType, EItemRarity } from '../../../definitions/item';
 import { STAT_DESCRIPTIONS, EStat } from '../../../definitions/stat';
 
@@ -18,7 +19,7 @@ export class ItemsListComponent implements OnInit {
   readonly ITEM_TYPE_KEYS = Object.keys(this.ITEM_TYPES);
   readonly ITEM_RARITY_KEYS = Object.keys(this.ITEM_RARITIES);
 
-  readonly STAT_VALUES = Object.values(this.STATS);
+  readonly STAT_VALUES = Object.values(this.STAT_DESCRIPTIONS);
   readonly ITEM_TYPE_VALUES = Object.values(this.ITEM_TYPES);
   readonly ITEM_RARITY_VALUES = Object.values(this.ITEM_RARITIES);
 
@@ -58,10 +59,9 @@ export class ItemsListComponent implements OnInit {
       });
     }
   }
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.updateFilter();
   }
-
 }

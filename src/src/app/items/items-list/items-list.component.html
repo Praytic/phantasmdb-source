@@ -31,9 +31,9 @@
             <label for="item-list-filter-stat">Stats</label>
             <div class="form-check" id="item-list-filter-stat">
               <div *ngFor="let stat of STAT_VALUES;">
-                  <input type="checkbox" class="form-check-input" [id]="'item-list-filter-rarity-'+stat" 
-                  [(ngModel)]="filterStats[stat]" (ngModelChange)="updateFilter()" [name]="'item-list-filter-rarity-'+stat">
-                  <label [for]="'item-list-filter-rarity-'+stat">{{stat}}</label>
+                  <input type="checkbox" class="form-check-input" [id]="'item-list-filter-rarity-'+stat.id"
+                  [(ngModel)]="filterStats[stat.id]" (ngModelChange)="updateFilter()" [name]="'item-list-filter-rarity-'+stat.id">
+                  <label [for]="'item-list-filter-rarity-'+stat">{{stat.name}}</label>
               </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let item of ITEMS">
+                <tr *ngFor="let item of ITEMS" [id]="item.name">
                   <td>
                     <img [src]="item.icon" [alt]="'Phantasm RPG ' + item.name + ' icon.'" [title]="'Phantasm RPG ' + item.name + ' icon.'">
                   </td>
@@ -61,7 +61,9 @@
                   <td>{{item.rarity}} {{item.type}}</td>
                   <td>
                     <div *ngFor="let stat of item.stats">
-                      {{stat[1]}} {{stat[0]}}
+                      <a [routerLink]="'../generic-information/stat-list'" fragment="{{stat[0]}}">
+                        {{stat[1]>0 ? '+' : ''}}{{stat[1]}} {{STAT_DESCRIPTIONS[stat[0]].name}}
+                      </a>
                     </div>
                     <div *ngFor="let effect of item.effects">{{effect}}</div>
                   </td>
